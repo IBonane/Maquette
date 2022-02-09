@@ -1,0 +1,115 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.rotate {
+    -moz-transition: all .5s linear;
+    -webkit-transition: all .5s linear;
+    transition: all .5s linear;
+}
+.rotate.down {
+    -moz-transform:rotate(90deg);
+    -webkit-transform:rotate(90deg);
+    transform:rotate(90deg);
+}
+
+section{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+#accordion, #accordion2{
+    width: 80%;
+}
+.accordion-toggle, .accordion-toggle2 {
+    background-color: rgb(201, 194, 194);
+    color: grey;
+    width: 100%;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+
+}
+
+.accordion-toggle:hover, .accordion-toggle2:hover{
+    background-color: rgb(49, 163, 230);
+    color: white;
+}
+
+.triangle{
+    font-size: 15px;
+    position: relative;
+    top: -5px;
+}
+.accordion-toggle h2, .accordion-toggle2 h2{
+    margin-left: 20px;
+}
+.accordion-content, .accordion-content2 {
+    display: none;
+    border: 1px solid gray;    
+}
+
+.gridDiv{
+    max-width: 2000px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+    grid-gap: 20px;
+}
+
+.descDiv{
+    display: flex;
+    align-items: center;
+    color: black;
+}
+
+.descDiv p{
+    font-size: 30px;
+}
+
+/*------------------Responsive-------------*/
+
+@media (max-width: 810px) {
+
+    .descDiv{
+        display: block;
+        text-align: center;
+        margin-top: -15%;
+    }
+
+    #accordion, #accordion2 {
+        -ms-overflow-style: none; /* for Internet Explorer, Edge */
+        scrollbar-width: none; /* for Firefox */
+        overflow-x: scroll; 
+    }
+    
+    #accordion::-webkit-scrollbar,  #accordion2::-webkit-scrollbar {
+        display: none; /* for Chrome, Safari, and Opera */
+    }
+}
+@media (max-width: 767px) {
+    .imgDiv img{
+        width: 500px;
+        height: 500px;
+    }
+
+    .descDiv{
+        margin-top: -12%;
+        width: 58%;
+    }
+    .descDiv p{
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 600px) {
+    .imgDiv img{
+        width: 300px;
+        height: 300px;
+    }
+
+    .descDiv p{
+        font-size: 20px;
+        margin-left: -25px;
+    }
+}
